@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Abhivadan Bhai 🙏</title>
+<meta name="description" content="Ek chhota sa surprise... sirf tere liye bhai ❤️">
+<meta property="og:title" content="Sorry Abhivadan Bhai 🙏">
+<meta property="og:description" content="Ek chhota sa surprise... sirf tere liye bhai ❤️">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffd3de; --text:#2b2430; --muted:#7c7285;
+    --accent:#ff6b81; --accent2:#845ec2; --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+  body{
+    font-family:'Poppins',system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.5;
+  }
+  /* soft drifting blobs, as on the original */
+  .blobs{position:fixed;inset:0;z-index:-1;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:drift 18s ease-in-out infinite alternate}
+  .b1{width:44vmax;height:44vmax;background:#ffd6e0;top:-12vmax;left:-10vmax}
+  .b2{width:38vmax;height:38vmax;background:#d6d3ff;bottom:-14vmax;right:-10vmax;animation-delay:-6s}
+  .b3{width:26vmax;height:26vmax;background:#ffe8c7;top:40%;left:55%;animation-delay:-12s}
+  @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(4vmax,-3vmax) scale(1.12)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:50}
+  section{
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:64px 22px;scroll-snap-align:start;position:relative;
+  }
+  .small{color:var(--muted);font-size:1rem;margin:8px 0}
+  h1,h2{font-weight:800;line-height:1.2;margin:10px 0 14px}
+  h1{font-size:clamp(2rem,7vw,3.4rem)}
+  h2{font-size:clamp(1.6rem,5.5vw,2.5rem)}
+  .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  p{max-width:520px}
+  strong{color:var(--accent)}
+  .btn{
+    margin-top:22px;border:0;cursor:pointer;color:#fff;font-size:1.05rem;font-weight:700;
+    padding:14px 28px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+    box-shadow:0 10px 30px rgba(255,107,129,.35);transition:transform .15s;
+  }
+  .btn:active{transform:scale(.96)}
+  .btn[disabled]{opacity:.6;cursor:default}
+  .photo{
+    width:min(78vw,300px);aspect-ratio:1;border-radius:24px;margin:18px 0;object-fit:cover;
+    background:var(--card);border:2px dashed rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem;padding:12px;
+    box-shadow:0 16px 40px rgba(0,0,0,.4);
+  }
+  img.photo{border:0}
+  .scroll-hint{margin-top:30px;color:var(--muted);animation:bob 1.6s infinite}
+  @keyframes bob{50%{transform:translateY(8px)}}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  .audio-card{
+    margin-top:18px;display:flex;align-items:center;gap:16px;background:var(--card);
+    border-radius:20px;padding:14px 20px;backdrop-filter:blur(8px);
+  }
+  .audio-card button{width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;font-size:1.1rem;color:#fff;background:linear-gradient(135deg,var(--accent),#a66bff)}
+  .audio-card span{color:var(--muted);font-variant-numeric:tabular-nums}
+  .count{display:flex;gap:12px;margin:18px 0;flex-wrap:wrap;justify-content:center}
+  .count div{background:var(--card);border-radius:16px;padding:14px 12px;min-width:72px}
+  .count b{display:block;font-size:2rem;font-variant-numeric:tabular-nums}
+  .count small{color:var(--muted)}
+  .footer{font-size:.85rem;color:var(--muted);margin-top:36px}
+  #mute{position:fixed;right:16px;bottom:16px;z-index:60;width:44px;height:44px;border-radius:50%;border:0;background:var(--card);color:#fff;font-size:1.1rem;cursor:pointer;backdrop-filter:blur(8px)}
+  .float{position:fixed;pointer-events:none;z-index:5;animation:rise linear forwards}
+  @keyframes rise{from{transform:translateY(0);opacity:1}to{transform:translateY(-110vh);opacity:0}}
+  .spray{position:fixed;pointer-events:none;z-index:100;user-select:none;will-change:transform,opacity;animation:spray .9s ease-out forwards}
+  @keyframes spray{from{transform:translate(-50%,-50%) scale(1);opacity:1}to{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.4);opacity:0}}
+</style>
+</head>
+<body>
+<div class="blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div id="progress"></div>
+
+<!-- 1. Intro -->
+<section id="intro">
+  <p class="small" style="margin-bottom:18px">tumhare itni acchi nahi bana sakte, lekin yahi dekh lo 🙏</p>
+  <p class="small">hey abhivadan bhai...</p>
+  <h1>ek surprise hai <span class="grad">tumhare liye</span> 🎁<br>hamne khud se banaya <span class="grad">tumhare liye</span></h1>
+  <div class="scroll-hint">scroll ↓</div>
+</section>
+
+<!-- 2. Teaser -->
+<section>
+  <div class="reveal">
+    <p class="small">hey abhivadan bhai...</p>
+    <h1>Ek cheez kehni thi tumse 🥺</h1>
+    <p class="small">bas thoda neeche scroll karo...</p>
+    <div class="scroll-hint">scroll ↓</div>
+  </div>
+</section>
+
+<!-- 3. Sorry -->
+<section>
+  <div class="reveal">
+    <h2>Sorry <span class="grad">Abhivadan bhai</span>,<br>maaf kardo 🙏</h2>
+    <p class="small">ye billa bhi tere liye ro raha hai 🐱😭</p>
+    <p>mera bhai ❤️</p>
+  </div>
+</section>
+
+<!-- 4. Galat tha -->
+<section>
+  <div class="reveal">
+    <h2>Me bhi galat tha 😔</h2>
+    <p>jo jo bola, <strong>vo sab bhul jana</strong> ❤️<br>dil se maafi maang raha hu, bhai.</p>
+    <p class="small">honest face 🥺</p>
+  </div>
+</section>
+
+<!-- 6. Miss you -->
+<section>
+  <div class="reveal">
+    <h2>Tumhari yaad aa rahi hai bhai 😭</h2>
+    <p class="small">ye billa bhi ro raha hai tumhare liye 🐱</p>
+    <p style="margin-top:14px">billa approve karta hai — maaf kar do use bhi 🥺</p>
+  </div>
+</section>
+
+
+<!-- Closing line -->
+<section>
+  <div class="reveal">
+    <h2>Mujhe bhi maaf kardo 🙏</h2>
+    <p>aur ek aur baat — hame tumse koi chid nahi ❤️</p>
+  </div>
+</section>
+
+<script>
+  // Progress bar
+  const bar = document.getElementById("progress");
+  addEventListener("scroll", () => {
+    const h = document.documentElement;
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
+  }, {passive:true});
+
+  // Scroll reveal
+  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add("in")), {threshold:.25});
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  // Emoji spray that follows the pointer
+  (function(){
+    let last = 0;
+    function spray(x, y){
+      const now = performance.now();
+      if (now - last < 45) return;
+      last = now;
+      const el = document.createElement("div");
+      el.className = "spray"; el.textContent = "😊";
+      el.style.left = x + "px"; el.style.top = y + "px";
+      el.style.fontSize = (16 + Math.random()*14) + "px";
+      el.style.setProperty("--dx", ((Math.random()-.5)*60) + "px");
+      el.style.setProperty("--dy", (20 + Math.random()*50) + "px");
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 950);
+    }
+    addEventListener("mousemove", e => spray(e.clientX, e.clientY), {passive:true});
+    addEventListener("touchmove", e => { const t = e.touches[0]; if (t) spray(t.clientX, t.clientY); }, {passive:true});
+  })();
+
+</script>
+</body>
+</html>
